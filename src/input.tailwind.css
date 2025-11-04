@@ -1,0 +1,395 @@
+/* Custom styles */
+
+/* Importeer Tailwind's base, components, en utilities */
+
+/* Custom styles (jouw bestaande custom CSS kan hieronder) */
+
+body {
+  font-family: "Nunito", sans-serif;
+  color: #353268ff;
+  font-size: 1.5rem;
+  /* AANGEPAST: van 1.25rem naar 1.5rem (text-2xl) */
+  line-height: 1.75;
+}
+
+/* Algemene koppen (h1, h2, h3) in Black Nunito */
+
+h1,
+h2,
+h3 {
+  font-family: "Nunito", sans-serif;
+  font-weight: 1100;
+  color: #353268ff;
+}
+
+/* Kleine tekst in Light Nunito - Tailwind's default is 400 (Regular) */
+
+p,
+div,
+span,
+a,
+button,
+label,
+input,
+select,
+textarea {
+  font-family: "Nunito", sans-serif;
+  font-weight: 500;
+  /* Light Nunito voor kleine tekst */
+  color: #353268ff;
+}
+
+/* Overrides voor specifieke elementen waar Bold/Semibold nodig is */
+
+.font-bold {
+  font-weight: 900;
+  /* Bold Nunito */
+}
+
+.font-semibold {
+  font-weight: 900;
+  /* Bold Nunito */
+}
+
+.font-black {
+  /* Specifieke override voor Nunito Black */
+  font-weight: 1100;
+}
+
+/* Voorbeeld: Een subtiele hover-lift effect op kaarten */
+
+.module-card {
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.module-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+/* Modal specifieke animaties (Tailwind classes doen het meeste werk, maar dit kan voor extra finesse) */
+
+.modal-enter-active #moduleModal > div,
+.modal-enter-active #registrationModal > div {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.modal-leave-active #moduleModal > div,
+.modal-leave-active #registrationModal > div {
+  opacity: 0;
+  transform: scale(0.95);
+}
+
+/* Parallax effect helper class */
+
+.parallax-bg {
+  background-attachment: fixed;
+  /* Dit is de kern van het parallax effect */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Responsive aanpassingen voor parallax images op kleinere schermen */
+
+@media (max-width: 768px) {
+  /* Voor tablets en smartphones */
+
+  .parallax-bg {
+    background-attachment: scroll;
+    /* Schakel parallax uit op mobiel voor betere performance */
+  }
+}
+
+/* Letter-voor-letter animatie */
+
+.buongiorno-letter {
+  display: inline-block;
+  /* Zorgt ervoor dat elke letter een eigen box is */
+  opacity: 0;
+  transform: translateY(20px) scale(0.8);
+  /* Startpositie: iets lager en kleiner */
+  animation: fadeInScaleUp 0.8s forwards;
+  /* Animatie toepassen */
+}
+
+@keyframes fadeInScaleUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Styling voor de cirkelvormige modules */
+
+.module-circle-wrapper {
+  position: relative;
+  width: 320px;
+  /* Standaardgrootte voor de cirkel */
+  height: 320px;
+  border-radius: 9999px;
+  /* Maakt het een cirkel */
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 8px solid #fff;
+  /* Witte rand */
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  /* Schaduw */
+  transition: transform 0.3s ease-in-out;
+}
+
+.module-circle-wrapper:hover {
+  transform: scale(1.05);
+}
+
+.module-bg-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  /* Zorgt dat de foto de hele cirkel vult */
+  z-index: 0;
+}
+
+/* Styling voor de transparante kleurlaag boven de foto */
+
+.module-circle-overlay {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  /* Onder de tekst, boven de foto */
+  /* Radial gradient voor diepte-effect */
+  background: radial-gradient(
+    circle at center,
+    transparent 0%,
+    rgba(0, 0, 0, 0.3) 100%
+  );
+}
+
+/* Voorbeeld: Specifieke overlay kleuren - TRANSPARANTER met gradient */
+
+.module-overlay-blue {
+  background: radial-gradient(
+    circle at center,
+    rgba(27, 157, 157, 0.2) 0%,
+    rgba(23, 105, 105, 0.7) 100%
+  );
+}
+
+.module-overlay-green {
+  background: radial-gradient(
+    circle at center,
+    rgba(1, 105, 91, 0.2) 0%,
+    rgba(3, 65, 57, 0.7) 100%
+  );
+}
+
+.module-overlay-teal {
+  background: radial-gradient(
+    circle at center,
+    rgba(25, 53, 125, 0.2) 0%,
+    rgba(27, 47, 98, 0.7) 100%
+  );
+}
+
+.module-overlay-purple {
+  background: radial-gradient(
+    circle at center,
+    rgba(112, 80, 167, 0.2) 0%,
+    rgba(48, 25, 88, 0.7) 100%
+  );
+}
+
+.module-overlay-pink {
+  background: radial-gradient(
+    circle at center,
+    rgba(161, 83, 122, 0.2) 0%,
+    rgba(108, 55, 81, 0.7) 100%
+  );
+}
+
+.module-circle-content {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* Lijn inhoud bovenaan uit */
+  padding: 1rem;
+  padding-top: 4rem;
+  /* Meer padding bovenaan */
+  padding-bottom: 5rem;
+  /* Meer ruimte onderaan voor de knop */
+  text-align: center;
+  z-index: 1;
+  color: #fff;
+}
+
+.module-circle-content h3 {
+  font-weight: 1100;
+  /* Nunito Black voor titel */
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.module-circle-content p {
+  font-weight: 500;
+  /* Nunito Light voor tekst */
+  color: #fff;
+  margin-bottom: 0;
+}
+
+/* Responsive aanpassingen voor de cirkels */
+
+@media (min-width: 768px) {
+  /* Medium schermen (tablets) */
+
+  .module-circle-wrapper {
+    width: 380px;
+    height: 380px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Large schermen (desktops) */
+
+  .module-circle-wrapper {
+    width: 320px;
+    height: 320px;
+  }
+}
+
+/* Styling voor de verbindingslijnen (in SVG) */
+
+#module-lines-svg line {
+  stroke: #353268ff;
+  /* Kleur van de lijnen */
+  stroke-width: 8px;
+  /* Dikte van de lijnen (match cirkelrand) */
+  stroke-linecap: round;
+  /* Afgeronde uiteinden */
+}
+
+/* Responsive aanpassingen voor de lijnen */
+
+@media (max-width: 1023px) {
+  /* Op tablets en smartphones, verberg lijnen */
+
+  #module-lines-svg {
+    display: none;
+  }
+}
+
+/* Custom Bullet List Styling */
+
+.custom-bullet-list {
+  list-style: none;
+  /* Verberg standaard bullets */
+  padding-left: 0;
+  /* Verwijder standaard padding, de bullet regelt de ruimte */
+}
+
+.custom-bullet-list li {
+  position: relative;
+  padding-left: 2.2rem;
+  /* Ruimte voor de custom bullet, dit creëert de witruimte links */
+  margin-bottom: 0.75rem;
+  /* Ruimte tussen list items */
+  opacity: 0;
+  /* Start onzichtbaar voor animatie */
+  transform: translateY(20px);
+  /* Start iets lager voor slide-up animatie */
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+  /* Animatie-eigenschappen */
+}
+
+/* Custom bullet met > */
+
+.custom-bullet-list li::before {
+  content: ">";
+  position: absolute;
+  left: 0;
+  /* Start aan de linkerrand van de padding-left */
+  top: 0.4em;
+  /* Pas dit aan om verticaal uit te lijnen met de tekst */
+  transform: translateY(-50%);
+  width: 0.6em;
+  /* Diameter voor de cirkel */
+  height: 0.6em;
+  /* Diameter voor de cirkel */
+  background-color: transparent;
+  font-weight: bold;
+  font-size: 1.1em;
+  /* Iets groter dan de tekst */
+  line-height: 1;
+  /* Maak het een perfecte cirkel */
+}
+
+/* Animatie-klasse die door JavaScript wordt toegevoegd */
+
+.custom-bullet-list li.animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stijl voor geneste lijsten (indented) - Geen custom bullet, gebruik browser default of subtiel */
+
+.indented {
+  list-style: none;
+  /* Gebruik standaard schijf-bullet voor geneste lijsten */
+  margin-left: 30px;
+  /* Behoud de inspringing */
+  padding-left: 0;
+  /* Geen extra padding */
+}
+
+.indented li {
+  position: relative;
+  padding-left: 1.2rem;
+  /* Ruimte voor het kleine bolletje */
+  margin-bottom: 0.25rem;
+  opacity: 1;
+  /* Zorg dat ze altijd zichtbaar zijn, of implementeer een aparte animatie */
+  transform: translateY(0);
+  /* Reset transform */
+  transition: none;
+  /* Geen animatie op deze items */
+  padding-left: 0.95em;
+  /* Geen extra padding-left */
+}
+
+/* Optioneel: subtiele bullet voor geneste lijsten geen standaard disc wilt */
+
+.indented li::before {
+  content: "\00B7";
+  color: #6366f1;
+  position: absolute;
+  left: 0.4em;
+  top: 0.8em;
+  transform: translateY(-50%);
+  font-size: 1em;
+  line-height: 1;
+  background-color: transparent;
+  border-radius: 0;
+  /* Geen border-radius */
+  width: auto;
+  /* Breedte automatisch */
+  height: auto;
+}

@@ -1,0 +1,919 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>
+            ELP | Persoonlijke ontwikkeling, emotieregulatie & traumaherstel
+        </title>
+        <!-- Google Fonts - Nunito -->
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700;900&display=swap"
+            rel="stylesheet"
+        />
+        <!-- Font Awesome voor iconen -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+        />
+
+        <!-- GECOMPILEERDE Tailwind CSS -->
+        <link rel="stylesheet" href="tailwind.css" />
+        <!-- Custom styles (voor jouw overrides) -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="bg-gray-50 antialiased font-nunito text-black">
+
+
+        <main>
+                    <!-- Hero Sectie - Parallax 1 met Video Achtergrond -->
+        <section class="relative h-screen flex items-center justify-center text-center text-white parallax-bg">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="parallax_video.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <!-- verlay boven video, zachte kleuren -->
+                        <div class="absolute inset-0 bg-gradient-to-t from-white to-purple-50 opacity-60 z-10"></div> 
+z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
+
+
+ <!-- LOGO, NAAM, TITEL -->
+   <div class="absolute top-0 left-0 pt-6 pl-6 pr-4 z-20 text-left">
+    <div class="flex items-center space-x-4 mb-2">
+        <img
+            src="h!.png"
+            alt="h! Logo Hannelore"
+            class="h-28 w-auto opacity-30"
+        >
+        <div class="-ml-2 mt-0">
+            <h1 class="text-2xl md:text-3xl font-black text-indigo-dark leading-tight mb-2">Hannelore</h1>
+            <p class="text-base md:text-lg text-indigo-dark font-light leading-tight">Psycholoog | ELP | <span class="text-sm md:text-base text-indigo-dark/40">geconventioneerd</span></p>
+        </div>
+    </div>
+</div>
+            <div class="z-20 p-0 w-full flex flex-col items-center justify-center text-center px-0">
+                <h2 class="text-5xl md:text-7xl font-black mb-4 leading-tight text-indigo-brand" id="buongiorno-title" data-text="Buongiorno!"></h2>
+                <p class="text-xl md:text-2xl max-w-4xl mx-auto mb-10 font-light text-black">
+                    Jouw verhaal met een happy end.
+                </p>
+                  <button
+        onclick="document.getElementById('journey-section').scrollIntoView({ behavior: 'smooth' });"
+        class="bg-sand-default text-indigo-brand w-28 h-28 rounded-full text-2xl font-black hover:bg-blue-dark/50 hover:text-white transition duration-300 ease-in-out shadow-lg transform hover:scale-105 flex items-center justify-center mx-auto"
+    >
+        Start
+    </button>
+            </div>
+        </section>
+
+            <!-- Jouw Reis Sectie -->
+            <section
+                id="journey-section"
+                class="py-16 md:py-24 bg-blue-dark/15 text-center"
+            >
+                <div class="container mx-auto px-4 max-w-4xl">
+                    <h2
+                        class="text-5xl md:text-6xl font-black mb-12 text-indigo-dark"
+                    >
+                        je therapie
+                    </h2>
+                    <div
+                        class="grid md:grid-cols-2 gap-10 text-left text-xl font-light text-indigo-dark"
+                        style="margin-left: 70px;"
+                    >
+                    
+                        <ul class="space-y-4">
+                            <li>Stap voor stap de juiste tools.</li>
+                            <li>Je eigen coach en expert.</li>
+                            <li>Jouw pad naar welzijn en succes.</li>
+                        </ul>
+                       <!-- Rechter Gedeelte -->
+                    <div class="space-y-2">
+                            
+                            <p class="text-xl font-light text-indigo-dark/40">
+                                Wetenschappelijke inzichten met
+                            </p>
+                            <p class="text-xl font-light text-indigo-dark/40">
+                                praktische, mensgerichte benaderingen.
+                            </p>
+                            <p
+                                class="text-xl font-light text-indigo-dark !mt-6"
+                            >
+                                Een veilige omgeving, met begrip.
+                            </p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </section>
+
+            <!-- Over Hannelore Sectie -->
+<section
+    id="about-me-section"
+    class="py-16 md:py-24 bg-sand-light/80 text-center"
+>
+    <div class="container mx-auto px-4 max-w-6xl">
+        <p class="text-lg text-indigo-dark font-light mb-2">met</p>
+        <h2
+            class="text-5xl md:text-6xl font-black mb-12 text-indigo-dark"
+        >
+            Hannelore
+        </h2>
+        <div
+            class="relative flex flex-col md:flex-row items-center justify-center"
+        >
+
+                        <!-- Linker Gedeelte -->
+                        <div
+                            class="md:w-1/3 text-right pr-6 md:pr-12 space-y-10 text-xl font-light text-indigo-dark mb-12 md:mb-0 leading-relaxed"
+                        >
+                            <p class="font-light">
+                                Klinisch psycholoog - oplossingsgericht
+                                psychotherapeut
+                            </p>
+                            <p class="font-light">
+                                Gespecialiseerd in stress, relatiedynamieken en
+                                psychotrauma
+                            </p>
+                            <p class="font-light">
+                                Onderlegd in hersenwerking en
+                                neuromodulatietechnieken
+                            </p>
+                        </div>
+
+                        <!-- Midden: Foto -->
+                        <div
+                            class="md:w-1/3 flex justify-center items-center relative -mt-20 md:mt-0 z-10 py-12 md:py-0"
+                        >
+                            <img
+                                src="about_me.jpg"
+                                alt="Hannelore"
+                                class="w-48 h-48 md:w-64 md:h-64 object-cover rounded-full border-8 border-white border-opacity-30 shadow-xl transform hover:scale-105 transition duration-300 ease-in-out"
+
+                            />
+                        </div>
+
+                        <!-- Rechter Gedeelte -->
+                        <div
+                            class="md:w-1/3 text-left pl-6 md:pl-12 space-y-6 text-xl font-light text-indigo-dark mt-8 md:mt-0 leading-relaxed"
+                        >
+                            <p class="font-light">
+                                <i
+                                    class="fas fa-heart text-blue-DEFAULT mr-2"
+                                ></i
+                                >Toby (hond) & Nouche (poes)
+                            </p>
+                            <p class="font-light">
+                                <i
+                                    class="fas fa-music text-blue-DEFAULT mr-2"
+                                ></i
+                                >Muziek (piano), dansen en inlineskaten
+                            </p>
+                            <p class="font-light">
+                                <i
+                                    class="fas fa-brain text-indigo-dark mr-2"
+                                ></i
+                                >Persoonlijkheidstypes, wetenschap, technologie,
+                                design
+                            </p>
+                            <p class="font-light">
+                                <i
+                                    class="fas fa-comments text-sand-DEFAULT mr-2"
+                                ></i
+                                >Stand-up comedy, diepgaande discussies over de
+                                menselijke conditie en geopolitieke trends.
+                            </p>
+                        </div>
+                    </div>
+                    <p
+                        class="mt-12 text-2xl font-bold text-indigo-dark/20 text-center"
+                    >
+                        Samen voor je gelukkige zelf!
+                    </p>
+                    <div class="mt-6">
+                        
+                    </div>
+                </div>
+            </section>
+
+                          <!-- De Therapie Sectie -->
+            <section
+                id="therapy-section"
+                class="py-16 md:py-24 bg-blue-light/30 text-center"
+            >
+                <div class="container mx-auto px-4 max-w-5xl">
+                    <p class="text-lg text-indigo-dark font-light mb-2">Ontdek</p>
+                    <h2 class="text-5xl md:text-6xl font-black mb-4 text-indigo-dark">
+                        de
+                        <span
+                            id="therapy-buongiorno-title"
+                            class="text-indigo-brand animated-title"
+                            data-text="Buongiorno!"
+                        ></span>
+                        <span class="font-black text-indigo-dark">aanpak</span>
+                    </h2>
+
+                    <p
+                        class="text-2xl font-light text-indigo-dark max-w-3xl mx-auto mb-20"
+                    >
+                        Holistisch en wetenschappelijk onderbouwd
+                    </p>
+
+                    <div
+                        class="grid md:grid-cols-2 gap-x-16 gap-y-10 text-left text-xl font-light mb-4 text-indigo-dark items-end"
+                    > <!-- items-end toegevoegd aan de grid container -->
+                        <!-- LINKER KOLOM -->
+                        <div>
+                            <h3
+                                class="mt-2 text-4xl font-bold mb-4 text-indigo-dark"
+                            >
+                                Meer dan een praatje...
+                            </h3>
+                            <!-- Korte slagzinnen op punten -->
+                            <ul class="space-y-6 font-light mt-6 custom-bullet-list">
+                                <li>
+                                    Complete reis voor emotionele en psychische
+                                    groei.
+                                </li>
+                                <li>
+                                    Met kennis, toepassing, ervaring
+                                    en interacties.
+                                </li>
+                                <li>
+                                    Focus op zelfbewustzijn:
+                                    <ul class="indented">
+                                        <li>zelfreflectie</li>
+                                        <li>zelfacceptatie</li>
+                                        <li>zelfactualisatie</li>
+                                        <li>zelfzorg</li>
+                                    </ul>
+                                </li>
+                                <li>Ontwikkel op jouw eigen tempo.</li>
+                            </ul>
+                        </div>
+                        <!-- RECHTER KOLOM -->
+                        <div>
+                            <!-- Korte slagzinnen op punten -->
+                            <ul class="space-y-6 font-light mt-5 custom-bullet-list">
+                                <li>Bepaal zelf òf en wat je deelt in groep.</li>
+                                <li>
+                                    Erkende behandelkaders en richtlijnen:
+                                    <ul class="ml-14 space-y-1 mt-4 indented">
+                                        <li>mindfulness &amp; emotieregulatie</li>
+                                        <li>trauma-informed stabilisatie</li>
+                                        <li>
+                                            herstructurering van
+                                            gedachtepatronen
+                                        </li>
+                                        <li>
+                                            ontwikkelen van een gezonde
+                                            ouderstem
+                                        </li>
+                                        <li>waarden &amp; een growth mindset</li>
+                                        <li>oplossingsgericht denken</li>
+                                        <li>transparante communicatie</li>
+                                        <li>gezonde grenzen</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+
+
+       <!-- Module Reis Visualisatie (Statische Structuur) -->
+<section
+    id="module-journey-visual-section"
+    class="py-12 md:py-20 bg-gray-light text-center relative overflow-hidden"
+>
+    <div class="container mx-auto px-4 max-w-6xl">
+        <p class="text-lg text-indigo-dark font-light mb-2">Kies</p>
+        <h2 class="text-5xl md:text-6xl font-black mb-4 text-indigo-dark">
+            je
+            <span
+                id="modules-buongiorno-title"
+                class="text-indigo-brand animated-title"
+                data-text="Buongiorno!"
+            ></span>
+            <span class="font-black text-indigo-dark">modules</span>
+        </h2>
+
+        <div
+            class="relative flex flex-col items-center justify-center space-y-24 lg:space-y-0 lg:flex-row lg:justify-between lg:items-center pt-20 md:pt-24 pb-12 md:pb-24 px-6"
+        >
+            <!-- Verbindingslijnen SVG (alleen tussen Module 1, 2 en 3) -->
+            <svg class="absolute hidden lg:block w-full h-full inset-0 z-0 pointer-events-none" viewBox="0 0 100 100" preserveAspectRatio="none">
+                <!-- Lijn van Module 1 naar 2 -->
+                <line x1="16.5" y1="25" x2="50" y2="25" stroke="white" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.15));" />
+                <!-- Lijn van Module 2 naar 3 -->
+                <line x1="50" y1="25" x2="83.5" y2="25" stroke="white" stroke-width="2" stroke-linecap="round" style="filter: drop-shadow(0px 2px 3px rgba(0, 0, 0, 0.15));" />
+            </svg>
+
+            <!-- Module Cirkels (Statisch) -->
+            <div
+                class="relative z-10 grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 gap-x-12 gap-y-24 items-center justify-center w-full mt-12 lg:-ml-16"
+            >
+                            <!-- Module 1 -->
+                            <div
+                                class="module-circle-wrapper lg:col-start-1 lg:row-start-1"
+                            >
+                                <div
+                                    class="module-circle bg-white border-4 border-blue-200"
+                                >
+                                    <img
+                                        src="module1_bg.jpg"
+                                        alt="Module 1 Achtergrond"
+                                        class="module-bg-image"
+                                    />
+                                    <div
+                                        class="module-circle-overlay module-overlay-blue"
+                                    ></div>
+                                    <div class="module-circle-content">
+                                        <h3
+                                            class="font-black text-white text-xl mb-2"
+                                        >
+                                            MODULE 1
+                                        </h3>
+                                        <p class="text-3xl text-white mb-1">
+                                            <!DOCTYPE html>
+                                            <html lang="en">
+                                                <head>
+                                                    <meta charset="UTF-8" />
+                                                    <meta
+                                                        name="viewport"
+                                                        content="width=device-width, initial-scale=1.0"
+                                                    />
+                                                    <title>Document</title>
+                                                </head>
+                                                <body></body>
+                                            </html>
+  <strong>Mijn verhaal...</strong>
+</p>
+                                        </p>
+                                        <p
+                                            class="text-sm text-white font-light"
+                                        >
+                                            (h)erkenning, zonder schuld &amp;
+                                            schaamte
+                                        </p>
+                                                                            <button onclick="showModule(1)" class="absolute bottom-6 text-white text-lg w-24 h-24 rounded-full bg-blue-DEFAULT hover:bg-indigo-dark/80 transition-colors flex items-center justify-center">Meer</button>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module 2 -->
+                            <div
+                                class="module-circle-wrapper lg:col-start-3 lg:row-start-1"
+                            >
+                                <div
+                                    class="module-circle bg-white border-4 border-green-200"
+                                >
+                                    <img
+                                        src="module2_bg.jpg"
+                                        alt="Module 2 Achtergrond"
+                                        class="module-bg-image"
+                                    />
+                                    <div
+                                        class="module-circle-overlay module-overlay-green"
+                                    ></div>
+                                    <div class="module-circle-content">
+                                        <h3
+                                            class="font-black text-white text-xl mb-2"
+                                        >
+                                            MODULE 2
+                                        </h3>
+                                            
+                                        <p class="text-3xl text-white mb-1">
+                                            <strong>Mijn leven...</strong>
+                                        </p>
+                                        <p
+                                            class="text-sm text-white font-light"
+                                        >
+                                            verantwoordelijkheid, zonder
+                                            ongezonde patronen
+                                        </p>
+                                        <button onclick="showModule(2)" class="absolute bottom-6 text-white text-lg w-24 h-24 rounded-full bg-blue-DEFAULT hover:bg-indigo-dark/80 transition-colors flex items-center justify-center">Meer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module 3 -->
+                            <div
+                                class="module-circle-wrapper lg:col-start-5 lg:row-start-1"
+                            >
+                                <div
+                                    class="module-circle bg-white border-4 border-teal-200"
+                                >
+                                    <img
+                                        src="module3_bg.jpg"
+                                        alt="Module 3 Achtergrond"
+                                        class="module-bg-image"
+                                    />
+                                    <div
+                                        class="module-circle-overlay module-overlay-teal"
+                                    ></div>
+                                    <div class="module-circle-content">
+                                        <h3
+                                            class="font-black text-white text-xl mb-2"
+                                        >
+                                            MODULE 3
+                                        </h3>
+                                        
+                                        <p class="text-3xl text-white mb-1">
+                                            <strong>Mijn dromen...</strong>
+                                        </p>
+                                        <p
+                                            class="text-sm text-white font-light"
+                                        >
+                                            doelen &amp; zelfzorg, zonder
+                                            uitstel of vermijding
+                                        </p>
+                                       <button onclick="showModule(3)" class="absolute bottom-6 text-white text-lg w-24 h-24 rounded-full bg-blue-DEFAULT hover:bg-indigo-dark/80 transition-colors flex items-center justify-center">Meer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module O (Vóór) -->
+                            <div
+                                class="module-circle-wrapper lg:col-start-2 lg:row-start-2 mt-16 lg:mt-0"
+                            >
+                                <div
+                                    class="module-circle bg-white border-4 border-purple-200"
+                                >
+                                    <img
+                                        src="moduleO_bg.jpg"
+                                        alt="Module O Achtergrond"
+                                        class="module-bg-image"
+                                    />
+                                    <div
+                                        class="module-circle-overlay module-overlay-purple"
+                                    ></div>
+                                    <div class="module-circle-content">
+                                        <h3
+                                            class="font-black text-white text-xl mb-2"
+                                        >
+                                            MODULE O (Vòòr)
+                                        </h3>
+                                        <p class="text-3xl text-white mb-1">
+                                            <strong>Mijn triggers...</strong>
+                                        </p>
+                                        <p
+                                            class="text-sm text-white font-light"
+                                        >
+                                            veiligheid &amp; regulatie, zonder
+                                            overspoeling
+                                        </p>
+                                       <button onclick="showModule(4)" class="absolute bottom-6 text-white text-lg w-24 h-24 rounded-full bg-blue-DEFAULT hover:bg-indigo-dark/80 transition-colors flex items-center justify-center">Meer</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Module X (Na) -->
+                            <div
+                                class="module-circle-wrapper lg:col-start-4 lg:row-start-2 mt-16 lg:mt-0"
+                            >
+                                <div
+                                    class="module-circle bg-white border-4 border-pink-200"
+                                >
+                                    <img
+                                        src="moduleX_bg.jpg"
+                                        alt="Module X Achtergrond"
+                                        class="module-bg-image"
+                                    />
+                                    <div
+                                        class="module-circle-overlay module-overlay-pink"
+                                    ></div>
+                                    <div class="module-circle-content">
+                                        <h3
+                                            class="font-black text-white text-xl mb-2"
+                                        >
+                                            MODULE X (Na)
+                                        </h3>
+                                        <p class="text-3xl text-white mb-1">
+                                            <strong>Mijn verlies...</strong>
+                                        </p>
+                                        <p
+                                            class="text-sm text-white font-light"
+                                        >
+                                            acceptatie &amp; zingeving, zonder
+                                            eenzaamheid &amp; gebrek
+                                        </p>
+                                        <button onclick="showModule(5)" class="absolute bottom-6 text-white text-lg w-24 h-24 rounded-full bg-blue-DEFAULT hover:bg-indigo-dark/80 transition-colors flex items-center justify-center">Meer</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Informatiesessie Highlight - Parallax 2 -->
+            <section
+                class="relative py-16 md:py-24 flex items-center justify-center text-center text-white parallax-bg"
+                style="background-image: url('parallax2.jpg')"
+            >
+                <div class="absolute inset-0 bg-blue-light opacity-50"></div>
+                <!-- Overlay: zacht blauw met meer opaciteit -->
+                <div class="z-10 p-4 container mx-auto max-w-3xl">
+                    <h3
+                        class="text-3xl md:text-4xl font-black mb-4 leading-tight text-white"
+                    >
+                        NIET ZEKER?
+                    </h3>
+                    <p
+                        class="text-xl md:text-2xl max-w-3xl mx-auto mb-8 font-light text-black"
+                    >
+                        Bekijk de infosessie
+                        of kom langs voor een vrijblijvende
+                        kennismaking!
+                    </p>
+                    <a
+                        href="https://www.eerstelijnszone.be/infosessie-hoe-kan-ik-mezelf-helpen"
+                        target="_blank"
+                        class="bg-sand-default text-indigo-brand w-40 h-40 rounded-full text-2xl font-black hover:bg-indigo-dark/60 hover:text-white transition duration-300 ease-in-out shadow-lg transform hover:scale-105 flex items-center justify-center mx-auto"
+                    >
+                        infosessie
+                    </a>
+                </div>
+            </section>
+
+            <!-- Quick Info -->
+            <section
+                class="bg-blue-50 border border-blue-200 rounded-lg p-6"
+            >
+                <div
+                    class="grid md:grid-cols-3 gap-6 text-center text-indigo-dark"
+                >
+                    <!-- Kleur toegevoegd -->
+                    <div>
+                        <div class="text-4xl text-blue-DEFAULT mb-2">📅</div>
+                        <h3 class="font-bold text-xl text-black">Wanneer</h3>
+                        <p class="text-sm text-indigo-dark">
+                            Vrijdag<br />10:00 of 11:30
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-4xl text-blue-DEFAULT mb-2">📍</div>
+                        <h3 class="font-bold text-xl text-black">Waar</h3>
+                        <p class="text-sm text-indigo-dark">
+                            Huis 30<br />Hasseltsestraat 30, Diest
+                        </p>
+                    </div>
+                    <div>
+                        <div class="text-4xl text-blue-DEFAULT mb-2">👥</div>
+                        <h3 class="font-bold text-xl text-black">
+                            Groepsgrootte
+                        </h3>
+                        <p class="text-sm text-indigo-dark">
+                            5-12 deelnemers<br />Afhankelijk van module
+                        </p>
+                    </div>
+                </div>
+            </section>
+<!-- Individuele Begeleiding Sectie -->
+<section class="py-16 md:py-24 bg-sand-light/50 text-center">
+    <div class="container mx-auto px-4 max-w-4xl">
+        <p class="text-lg text-indigo-dark font-light mb-2">Toch liever</p>
+        <h2 class="text-5xl md:text-6xl font-black mb-6 text-indigo-dark">
+            één-op-één?
+        </h2>
+        <p class="text-xl text-indigo-dark mb-8 font-light max-w-2xl mx-auto">
+            Schrijf je in op de wachtlijst.
+            Hou er rekening mee dat deze enkele maanden duurt.
+            Ik neem dan later contact op om een afspraak in te plannen.
+
+        </p>
+        <button 
+            onclick="showIndividueleInschrijving()" 
+            class="inline-flex items-center justify-center bg-blue-DEFAULT text-indigo-dark w-40 h-40 rounded-full text-lg md:text-xl font-semibold hover:bg-sand-brand/50 hover:text-white duration-300 ease-in-out shadow-lg transform hover:scale-105">
+            Wachtlijst
+        </button>
+    </div>
+</section>
+
+<!-- Individuele Inschrijving Modal -->
+<div
+    id="individueleModal"
+    class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 ease-in-out"
+>
+    <div
+        class="bg-sand-light rounded-lg max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 ease-in-out"
+    >
+        <div class="flex justify-between items-start mb-6">
+            <h2 class="text-3xl font-black text-indigo-brand">Individuele begeleiding</h2>
+            <button
+                onclick="closeIndividueleModal()"
+                class="text-gray-dark hover:text-indigo-brand text-2xl leading-none"
+            >
+                ✕
+            </button>
+        </div>
+        <form id="individueleForm" class="space-y-5 text-left font-light">
+            
+            <div>
+                <label for="ind_voornaam" class="block text-indigo-dark text-base font-semibold mb-2">Voornaam *</label>
+                <input type="text" name="voornaam" id="ind_voornaam" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+            </div>
+
+            <div>
+                <label for="ind_achternaam" class="block text-indigo-dark text-base font-semibold mb-2">Achternaam *</label>
+                <input type="text" name="achternaam" id="ind_achternaam" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+            </div>
+
+            <div>
+                <label for="ind_rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">Rijksregisternummer *</label>
+                <input type="text" name="rijksregisternummer" id="ind_rijksregisternummer" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+            </div>
+
+            <div>
+                <label for="ind_email" class="block text-indigo-dark text-base font-semibold mb-2">E-mail *</label>
+                <input type="email" name="email" id="ind_email" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+            </div>
+
+            <div>
+                <label for="ind_telefoon" class="block text-indigo-dark text-base font-semibold mb-2">Telefoon *</label>
+                <input type="tel" name="telefoon" id="ind_telefoon" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+            </div>
+
+            <div>
+                <label for="ind_verwijzerType" class="block text-indigo-dark text-base font-semibold mb-2">Hoe hoorde je van ons? *</label>
+                <select name="verwijzerType" id="ind_verwijzerType" onchange="toggleIndVerwijzerNaam()" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                    <option value="">Maak een keuze...</option>
+                    <option value="Hannelore">Hannelore</option>
+                    <option value="huisarts">Huisarts</option>
+                    <option value="ocmw-diest">OCMW Diest</option>
+                    <option value="website">Website Psychewijzer</option>
+                    <option value="Vind-een-psycholoog">Vind-een-psycholoog</option>
+                    <option value="mond-tot-mond">Mond-tot-mond</option>
+                    <option value="therapeut">Andere praktijk</option>
+                    <option value="apotheker">Apotheker</option>
+                    <option value="caw">CAW</option>
+                    <option value="anders">Anders</option>
+                </select>
+            </div>
+
+            <div id="ind_verwijzerNaamDiv" class="hidden">
+                <label for="ind_verwijzerNaam" class="block text-indigo-dark text-base font-semibold mb-2">Naam van verwijzer</label>
+                <input type="text" name="verwijzerNaam" id="ind_verwijzerNaam" placeholder="Bijv. Dr. Janssen, Apotheek De Mol, ..." class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                <p class="text-xs text-gray-dark mt-1">Optioneel - ifv. samenwerking en geïntegreerde zorg</p>
+            </div>
+<!-- Week voorkeur -->
+<div>
+    <label class="block text-indigo-dark text-base font-semibold mb-2">Weekvoorkeur (optioneel)</label>
+    <div class="space-y-2 ml-4">
+        <label class="flex items-center">
+            <input type="checkbox" name="weekVoorkeur" value="niet_in_schoolvakanties" class="mr-3">
+            <span class="font-light text-base">Niet in schoolvakanties</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" name="weekVoorkeur" value="even_weken" class="mr-3">
+            <span class="font-light text-base">Even weken</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" name="weekVoorkeur" value="oneven_weken" class="mr-3">
+            <span class="font-light text-base">Oneven weken</span>
+        </label>
+    </div>
+</div>
+
+            <div>
+                <label class="block text-indigo-dark text-base font-semibold mb-3">Voorkeursmomenten *</label>
+                <div class="space-y-2">
+                    <label class="flex items-center">
+                        <input type="checkbox" name="voorkeurDagen" value="geen_voorkeur" onchange="toggleGeenVoorkeur(this)" class="mr-2">
+                        <span class="font-light text-base">Geen voorkeur</span>
+                    </label>
+                    <div id="dagMomentenCheckboxes" class="grid grid-cols-1 gap-2 ml-4">
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="ma_vm" class="mr-2 dag-moment"><span class="font-light text-base">Maandag voormiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="ma_nm" class="mr-2 dag-moment"><span class="font-light text-base">Maandag namiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="ma_av" class="mr-2 dag-moment"> <span class="font-light text-base">Maandag avond</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="di_vm" class="mr-2 dag-moment"> <span class="font-light text-base">Dinsdag voormiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="di_nm" class="mr-2 dag-moment"> <span class="font-light text-base">Dinsdag namiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="di_av" class="mr-2 dag-moment"> <span class="font-light text-base">Dinsdag avond</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="wo_vm" class="mr-2 dag-moment"> <span class="font-light text-base">Woensdag voormiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="wo_nm" class="mr-2 dag-moment"> <span class="font-light text-base">Woensdag namiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="wo_av" class="mr-2 dag-moment"> <span class="font-light text-base">Woensdag avond</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="do_vm" class="mr-2 dag-moment"> <span class="font-light text-base">Donderdag voormiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="do_nm" class="mr-2 dag-moment"> <span class="font-light text-base">Donderdag namiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="do_av" class="mr-2 dag-moment"> <span class="font-light text-base">Donderdag avond</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="vr_vm" class="mr-2 dag-moment"> <span class="font-light text-base">Vrijdag voormiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="vr_nm" class="mr-2 dag-moment"> <span class="font-light text-base">Vrijdag namiddag</span></label>
+                        <label class="flex items-center"><input type="checkbox" name="voorkeurDagen" value="vr_av" class="mr-2 dag-moment"> <span class="font-light text-base">Vrijdag avond</span></label>
+                    </div>
+                </div>
+            </div>
+
+
+            <div>
+                <label for="ind_bijzondereBehoeften" class="block text-indigo-dark text-base font-semibold mb-2">Wensen of vragen</label>
+                <textarea name="bijzondereBehoeften" id="ind_bijzondereBehoeften" rows="4" class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"></textarea>
+            </div>
+
+            <div class="flex gap-4 mt-6">
+                <button
+                    type="button"
+                    onclick="closeIndividueleModal()"
+                    class="flex-1 bg-gray-DEFAULT text-indigo-dark px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-dark transition duration-300 ease-in-out shadow-md"
+                >
+                    Annuleren
+                </button>
+                <button
+                    type="submit"
+                    class="flex-1 bg-blue-DEFAULT text-indigo-dark px-6 py-3 rounded-full text-lg font-semibold hover:bg-indigo-dark hover:text-white transition duration-300 ease-in-out shadow-md"
+                >
+                    Inschrijven
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+           
+                  <!-- Contact & Info - Parallax met Video Achtergrond -->
+        <section class="relative py-16 md:py-24 flex items-center justify-center text-center text-white parallax-bg">
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover z-0">
+                <source src="parallax_video_contact.mp4" type="video/mp4"> <!-- videobestand voor contactsectie -->
+                Your browser does not support the video tag.
+            </video>
+            <div class="absolute inset-0 bg-sand-dark opacity-50 z-10"></div> <!-- Overlay met custom kleur -->
+            <div class="z-20 p-4 container mx-auto max-w-3xl"> <!-- z-index verhoogd -->
+                <p>
+                        <i class="fas fa-phone-alt text-indigo-dark mr-1"></i>
+                        <a
+                            href="tel:+32468116666"
+                            class="text-lg text-indigo-dark font-light hover:underline mb-3"
+                            >0468 11 66 66</a
+                        >
+                    </p>
+                <p class="text-xl text-indigo-dark font-light mt-1 mb-2">Schoenmakersstraat 8B3, derde verdieping, Diest</p>
+                
+                <h3 class="text-3xl md:text-4xl font-black mt-8 mb-6 text-indigo-dark">Vragen of meer informatie?</h3>
+                <p class="text-xl text-indigo-dark mb-8 font-light">
+                    We helpen je graag verder!
+                </p>
+                                <a href="mailto:info@brainctr.be?subject=Via de ELP-website: vraag" class="inline-flex items-center justify-center bg-blue-DEFAULT text-indigo-dark w-28 h-28 rounded-full text-lg md:text-xl font-semibold hover:bg-sand-dark/50 hover:text-white duration-300 ease-in-out shadow-lg transform hover:scale-105">
+                    Mail
+                </a>
+
+                <!-- Footer Branding -->
+                <div class="mt-24 text-indigo-dark text-sm">
+                   
+                    <img src="Brainwavelogo.png" alt="BrainCTR! Logo" class="h-56 w-auto mx-auto">
+                     <p class="mb-4">by <a href="https://brainctr.be" target="_blank" class="text-indigo-dark hover:underline font-normal">BrainCTR!</a> - &copy; 2025</p>
+                </div>
+            </div>
+        </section>
+
+        </main>
+
+        <!-- Modals komen hier (kleuren ook aangepast) -->
+        <!-- Module Details Modal -->
+        <div
+            id="moduleModal"
+            class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 ease-in-out"
+        >
+            <div
+                class="bg-white rounded-lg max-w-3xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 ease-in-out"
+            >
+                <div class="flex justify-between items-start mb-4">
+                    <h2
+                        id="modalTitle"
+                        class="text-4xl font-black text-black"
+                    ></h2>
+                    <button
+                        onclick="closeModal()"
+                        class="text-gray-dark hover:text-black text-2xl leading-none"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <div
+                    id="modalContent"
+                    class="text-indigo-dark leading-relaxed space-y-4 font-light"
+                ></div>
+                <div class="mt-12 flex justify-end">
+                    <button
+                        id="registerBtn"
+                        class="bg-blue-DEFAULT text-indigo-dark px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-dark hover:text-white transition duration-300 ease-in-out shadow-md"
+                    >
+                        Inschrijven 
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Inschrijfformulier Modal -->
+        <div
+            id="registrationModal"
+            class="fixed inset-0 bg-black bg-opacity-60 flex items-center justify-center p-4 z-50 hidden transition-opacity duration-300 ease-in-out"
+        >
+            <div
+                        class="bg-sand-light rounded-lg max-w-xl w-full max-h-[90vh] overflow-y-auto p-8 shadow-2xl transform scale-95 opacity-0 transition-all duration-300 ease-in-out">
+
+            >
+                <div class="flex justify-between items-start mb-6">
+                    <h2 class="text-3xl font-black text-indigo-brand">Inschrijving</h2>
+                    <button
+                        onclick="closeRegistrationModal()"
+                        class="text-gray-dark hover:text-indigo-brand text-2xl leading-none"
+                    >
+                        ✕
+                    </button>
+                </div>
+                <form
+                    id="registrationForm"
+                    class="space-y-5 text-left font-light"
+                >
+                      <input type="hidden" name="preselectedModuleId" id="preselectedModuleId"> <!-- voorsortering -->
+
+                  <!-- Module Selectie -->
+                <div>
+                    <label for="registrationModuleSelect" class="block text-indigo-dark text-base font-semibold mb-2">Kies een Module *</label>
+                    <select name="moduleId" id="registrationModuleSelect" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                        <option value="">Laden van modules...</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="voornaam" class="block text-indigo-dark text-base font-semibold mb-2">Voornaam *</label> 
+                    <input type="text" name="voornaam" id="voornaam" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
+                </div>
+
+                    <div>
+                    <label for="achternaam" class="block text-indigo-dark text-base font-semibold mb-2">Achternaam *</label> 
+                    <input type="text" name="achternaam" id="achternaam" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
+                </div>
+                <div>
+                    <label for="rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">Rijksregisternummer *</label>
+                    <input type="text" name="rijksregisternummer" id="rijksregisternummer" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                </div>
+                     <div>
+                    <label for="e-mail" class="block text-indigo-dark text-base font-semibold mb-2">E-mail *</label> 
+                    <input type="email" name="email" id="e-mail" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
+                </div>
+                     <div>
+                    <label for="telefoon" class="block text-indigo-dark text-base font-semibold mb-2">Telefoon *</label> 
+                    <input type="text" name="telefoon" id="telefoon" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
+                </div>
+                                       <div>
+                        <label for="verwijzerType" class="block text-indigo-dark text-base font-semibold mb-2">Hoe hoorde je van ons? *</label> 
+                                                <select name="verwijzerType" id="verwijzerType" onchange="toggleVerwijzerNaam()" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                            <option value="">Maak een keuze...</option>
+                            <option value="Hannelore">Hannelore</option>
+                            <option value="huisarts">Huisarts</option>
+                            <option value="ocmw-diest">OCMW Diest</option>
+                            <option value="website">Website Psychewijzer</option>
+                            <option value="Vind-een-psycholoog">Vind-een-psycholoog</option>
+                            <option value="mond-tot-mond">Mond-tot-mond</option>
+                            <option value="therapeut">Andere praktijk</option>
+                            <option value="apotheker">Apotheker</option>
+                            <option value="caw">CAW</option>
+                            <option value="anders">Anders</option>
+                        </select>
+
+                    </div>
+                    <div id="verwijzerNaamDiv" class="hidden">
+                        <label for="verwijzerNaam" class="block text-indigo-dark text-base font-semibold mb-2">Naam van verwijzer</label> 
+                        <input type="text" name="verwijzerNaam" id="verwijzerNaam" placeholder="Bijv. Dr. Janssen, Apotheek De Mol, ..." class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
+                        <p class="text-xs text-gray-dark mt-1">Optioneel - ifv. samenwerking en geïntegreerde zorg</p>
+                    </div>
+
+                                       <div>
+                        <label for="bijzondereBehoeften" class="block text-indigo-dark text-base font-semibold mb-2">Wensen of vragen</label> 
+                        <textarea name="bijzondereBehoeften" id="bijzondereBehoeften" rows="4" class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"></textarea> 
+                    </div>
+
+
+                    <div
+                        class="bg-blue-light p-4 rounded-lg text-sm text-black"
+                    >
+                        <p class="font-semibold">📅 Planning:</p>
+                        <p>
+                            Je ontvangt een bevestigingsmail met de specifiek geplande data en tijd. Sessies vinden plaats op vrijdagvoormiddag in Huis
+                            30, Hasseltsestraat 30, Diest.
+                        </p>
+                    </div>
+
+                    <div class="flex gap-4 mt-6">
+                        <button
+                            type="button"
+                            onclick="closeRegistrationModal()"
+                            class="flex-1 bg-gray-DEFAULT text-indigo-dark px-6 py-3 rounded-full text-lg font-semibold hover:bg-gray-dark transition duration-300 ease-in-out shadow-md"
+                        >
+                            Annuleren
+                        </button>
+                        <button
+                            type="submit"
+                            class="flex-1 bg-blue-DEFAULT text-indigo-dark px-6 py-3 rounded-full text-lg font-semibold hover:bg-indigo-dark hover:text-white transition duration-300 ease-in-out shadow-md"
+                        >
+                            Inschrijven
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <script src="script.js" type="module"></script>
+    </body>
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Admin Panel | Hannelore</title>
+        <link rel="stylesheet" href="tailwind.css" />
+        <!-- Zorg dat je Tailwind hier ook werkt -->
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body class="bg-gray-100 font-sans">
+        <div
+            id="login-screen"
+            class="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8"
+        >
+            <div
+                class="max-w-md w-full space-y-8 p-10 bg-white rounded-xl shadow-lg"
+            >
+                <h2
+                    class="mt-6 text-center text-3xl font-extrabold text-gray-900"
+                >
+                    Log in op het Admin Panel
+                </h2>
+                <form id="login-form" class="mt-8 space-y-6">
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Gebruikersnaam"
+                        required
+                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    />
+                    <input
+                        type="password"
+                        id="password"
+                        placeholder="Wachtwoord"
+                        required
+                        class="appearance-none rounded-md relative block w-full px-3 py-2 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm"
+                    />
+                    <button
+                        type="submit"
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-blue-DEFAULT hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    >
+                        Inloggen
+                    </button>
+                    <p id="login-error" class="text-red-500 text-center"></p>
+                </form>
+            </div>
+        </div>
+
+        <div id="admin-panel" class="hidden">
+            <header class="bg-white shadow-sm p-4">
+                <div
+                    class="container mx-auto flex justify-between items-center"
+                >
+                    <h1 class="text-2xl font-bold text-gray-900">
+                        Admin Panel
+                    </h1>
+                    <button
+                        id="logout-btn"
+                        class="py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-red-600 hover:bg-red-700"
+                    >
+                        Uitloggen
+                    </button>
+                </div>
+            </header>
+            <main class="container mx-auto mt-8 p-4">
+                <!-- Hier komt de Aanwezigheidsbeheer sectie -->
+                <section id="admin-aanwezigheid-content" class="py-8">
+                    <h2
+                        class="text-4xl font-black mb-8 text-indigo-dark text-center"
+                    >
+                        Aanwezigheidsbeheer
+                    </h2>
+
+                    <div class="mb-8">
+                        <h3 class="text-2xl font-bold mb-4 text-indigo-dark">
+                            Selecteer Module & Sessie
+                        </h3>
+                        <select
+                            id="adminModuleSelect"
+                            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg mb-4 text-base"
+                        >
+                            <option value="">Kies een module...</option>
+                        </select>
+                        <select
+                            id="adminSessionSelect"
+                            class="w-full md:w-1/2 p-3 border border-gray-300 rounded-lg text-base"
+                            disabled
+                        >
+                            <option value="">Kies een sessie...</option>
+                        </select>
+                    </div>
+
+                    <div id="aanwezigheidLijstContainer" class="hidden">
+                        <h3 class="text-2xl font-bold mb-4 text-indigo-dark">
+                            Aanwezigheid registreren
+                        </h3>
+                        <div
+                            id="aanwezigheidLijst"
+                            class="bg-white shadow-md rounded-lg p-6"
+                        >
+                            <p class="text-gray-600">
+                                Selecteer een sessie om de lijst te laden.
+                            </p>
+                        </div>
+                        <button
+                            id="saveAanwezigheidBtn"
+                            class="mt-8 bg-blue-DEFAULT text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-indigo-dark transition-colors"
+                            disabled
+                        >
+                            Aanwezigheid opslaan
+                        </button>
+                    </div>
+                </section>
+            </main>
+        </div>
+
+        <script src="admin.js"></script>
+        <!-- Belangrijk: aparte JS voor admin -->
+    </body>
+</html>
