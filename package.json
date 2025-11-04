@@ -4,13 +4,11 @@
   "description": "Frontend for BrainCTR ELP website",
   "private": true,
   "scripts": {
-  "dev": "vite",
-  "build": "vite build",
-  "build:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./tailwind.css --minify",
-  "watch:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./tailwind.css --watch"
-},
-
-
+    "dev": "vite",
+    "build": "npx tailwindcss -i ./src/tailwind.css -o ./tailwind.css --minify && vite build",
+    "build:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./tailwind.css --minify",
+    "watch:tailwind": "npx tailwindcss -i ./src/tailwind.css -o ./tailwind.css --watch"
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
