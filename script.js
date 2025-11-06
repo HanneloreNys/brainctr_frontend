@@ -518,7 +518,8 @@ document
       verwijzerNaam: formData.get("verwijzerNaam"),
       bijzondereBehoeften: formData.get("bijzondereBehoeften"),
     };
-    console.log("Verzonden data:", registrationData); //log errors
+
+    console.log("Frontend verzendt data:", registrationData); //log errors
 
     let endpoint = `${API_BASE_URL}/inschrijvingen`;
 
