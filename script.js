@@ -361,6 +361,7 @@ function toggleVerwijzerNaam() {
     verwijzerNaamDiv.classList.add("hidden");
   }
 }
+window.toggleVerwijzerNaam = toggleVerwijzerNaam;
 
 // Generieke letter-voor-letter animatie functie
 function animateTitle(elementId, className, delayMultiplier = 0.1) {
@@ -478,6 +479,7 @@ function toggleIndVerwijzerNaam() {
     verwijzerNaamDiv.classList.add("hidden");
   }
 }
+window.toggleIndVerwijzerNaam = toggleIndVerwijzerNaam;
 
 // Toggle "Geen voorkeur" checkbox
 function toggleGeenVoorkeur(checkbox) {
@@ -493,6 +495,7 @@ function toggleGeenVoorkeur(checkbox) {
     });
   }
 }
+window.toggleGeenVoorkeur = toggleGeenVoorkeur;
 
 // Handle groepssessie inschrijfformulier submit
 document
@@ -514,6 +517,7 @@ document
       verwijzerNaam: formData.get("verwijzerNaam"),
       bijzondereBehoeften: formData.get("bijzondereBehoeften"),
     };
+    console.log("Verzonden data:", registrationData); //log errors
 
     let endpoint = `${API_BASE_URL}/inschrijvingen`;
 
@@ -628,10 +632,13 @@ function setupListItemAnimations() {
   });
 }
 
-// Zorg dat toggleVerwijzerNaam werkt bij laden van de modal
+// Zorg dat toggleVerwijzerNaam en moduleID voorsortering werkt bij laden van de modal
 document.addEventListener("DOMContentLoaded", () => {
   loadModules();
   setupScrollAnimations();
+
+  // Voor moduleID inschrijving
+  const moduleId = document.getElementById("preselectedModuleId").value;
 
   // Voor groepssessie verwijzer
   const verwijzerTypeSelect = document.getElementById("verwijzerType");
