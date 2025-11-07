@@ -158,7 +158,7 @@ textarea {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   /* Zorgt dat de foto de hele cirkel vult */
   z-index: 0;
 }
