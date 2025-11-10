@@ -17,5 +17,8 @@
     "postcss": "^8.4.38",
     "tailwindcss": "^3.4.3",
     "vite": "^7.1.12"
+  },
+  "dependencies": {
+    "react-google-recaptcha-v3": "^1.11.0"
   }
 }

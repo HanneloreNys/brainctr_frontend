@@ -507,7 +507,16 @@ document
     const formData = new FormData(this);
     const moduleId = formData.get("moduleId");
 
+    // Haal reCAPTCHA token op
+    const recaptchaToken = await grecaptcha.execute(
+      "6Lf1cQCsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+      {
+        action: "inschrijving",
+      }
+    );
+
     const registrationData = {
+      recaptchaToken: recaptchaToken,
       moduleId: moduleId,
       voornaam: formData.get("voornaam"),
       achternaam: formData.get("achternaam"),
@@ -565,7 +574,16 @@ document
     const voorkeurDagen = formData.getAll("voorkeurDagen");
     const weekVoorkeur = formData.getAll("weekVoorkeur");
 
+    // Haal reCAPTCHA token op
+    const recaptchaToken = await grecaptcha.execute(
+      "6Lf1cQCsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+      {
+        action: "inschrijving",
+      }
+    );
+
     const registrationData = {
+      recaptchaToken: recaptchaToken,
       voornaam: formData.get("voornaam"),
       achternaam: formData.get("achternaam"),
       rijksregisternummer: formData.get("rijksregisternummer"),

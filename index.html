@@ -22,6 +22,9 @@
         <link rel="stylesheet" href="tailwind.css" />
         <!-- Custom styles (voor jouw overrides) -->
         <link rel="stylesheet" href="style.css" />
+    
+         <!-- Google reCAPTCHA v3 -->
+        <script src="https://www.google.com/recaptcha/api.js?render=6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe"></script>
     </head>
     <body class="bg-gray-50 antialiased font-nunito text-black">
 
@@ -541,38 +544,47 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
             </section>
 
             <!-- Quick Info -->
-            <section
-                class="bg-blue-50 border border-blue-200 rounded-lg p-6"
-            >
-                <div
-                    class="grid md:grid-cols-3 gap-6 text-center text-indigo-dark"
-                >
-                    <!-- Kleur toegevoegd -->
-                    <div>
-                        <div class="text-4xl text-blue-DEFAULT mb-2">📅</div>
-                        <h3 class="font-bold text-xl text-black">Wanneer</h3>
-                        <p class="text-sm text-indigo-dark">
-                            Vrijdag 10:00 of 11:30<br />check specifieke data
-                        </p>
-                    </div>
-                    <div>
-                        <div class="text-4xl text-blue-DEFAULT mb-2">📍</div>
-                        <h3 class="font-bold text-xl text-black">Waar</h3>
-                        <p class="text-sm text-indigo-dark">
-                            Huis 30<br />Hasseltsestraat 30, Diest
-                        </p>
-                    </div>
-                    <div>
-                        <div class="text-4xl text-blue-DEFAULT mb-2">👥</div>
-                        <h3 class="font-bold text-xl text-black">
-                            Groepsgrootte
-                        </h3>
-                        <p class="text-sm text-indigo-dark">
-                            5-12 deelnemers<br />Afhankelijk van module
-                        </p>
-                    </div>
-                </div>
-            </section>
+<section class="bg-blue-50 border border-blue-200 rounded-lg p-6">
+    <div class="grid md:grid-cols-4 gap-6 text-center text-indigo-dark">
+        <!-- Wanneer -->
+        <div>
+            <div class="text-4xl text-blue-DEFAULT mb-2">📅</div>
+            <h3 class="font-bold text-xl text-black">Wanneer</h3>
+            <p class="text-sm text-indigo-dark">
+                Vrijdag 10:00 of 11:30<br />check specifieke data
+            </p>
+        </div>
+        
+        <!-- Waar -->
+        <div>
+            <div class="text-4xl text-blue-DEFAULT mb-2">📍</div>
+            <h3 class="font-bold text-xl text-black">Waar</h3>
+            <p class="text-sm text-indigo-dark">
+                Huis 30<br />Hasseltsestraat 30, Diest
+            </p>
+        </div>
+        
+        <!-- Groepsgrootte -->
+        <div>
+            <div class="text-4xl text-blue-DEFAULT mb-2">👥</div>
+            <h3 class="font-bold text-xl text-black">Groepsgrootte</h3>
+            <p class="text-sm text-indigo-dark">
+                5-12 deelnemers<br />Afhankelijk van module
+            </p>
+        </div>
+        
+        <!-- Prijs -->
+        <div>
+            <div class="text-4xl text-blue-DEFAULT mb-2">💶</div>
+            <h3 class="font-bold text-xl text-black">Prijs</h3>
+            <p class="text-sm text-indigo-dark">
+                2,50 euro per sessie<br />
+                <span class="text-xs text-indigo-dark/60">gratis via OCMW Diest</span>
+            </p>
+        </div>
+    </div>
+</section>
+
 <!-- Individuele Begeleiding Sectie -->
 <section class="py-16 md:py-24 bg-sand-light/50 text-center">
     <div class="container mx-auto px-4 max-w-4xl">
@@ -727,6 +739,14 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
                     Inschrijven
                 </button>
             </div>
+        <p style="font-size: 12px; color: #666; margin-bottom: 15px; text-align: center;">
+        Door in te schrijven ga je akkoord met ons 
+        <a href="https://www.brainctr.be/privacy" target="_blank" style="color: #3498db; text-decoration: underline;">
+        privacybeleid
+         </a> 
+         en de verwerking van je persoonsgegevens.
+         </p>
+
         </form>
     </div>
 </div>
@@ -911,6 +931,13 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
                             Inschrijven
                         </button>
                     </div>
+                    <p style="font-size: 12px; color: #666; margin-bottom: 15px; text-align: center;">
+                     Door in te schrijven ga je akkoord met ons 
+                     <a href="https://www.brainctr.be/privacy" target="_blank" style="color: #3498db; text-decoration: underline;">
+                     privacybeleid
+                     </a> 
+                     en de verwerking van je persoonsgegevens.
+                    </p>
                 </form>
             </div>
         </div>
