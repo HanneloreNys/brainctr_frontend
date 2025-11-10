@@ -125,15 +125,15 @@ textarea {
   transform: scale(1.05);
 }
 
-/* Voor de module cirkels */
-.module-circle-wrapper .module-circle {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+/* Module cirkel schaduw - net als buttons */
+.module-circle {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
 }
 
-.module-circle-wrapper .module-circle:hover {
+.module-circle:hover {
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   transform: scale(1.05);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2), 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .module-bg-image {
