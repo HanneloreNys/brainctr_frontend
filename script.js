@@ -552,7 +552,7 @@ document
 
       if (response.ok) {
         alert(
-          "Bedankt voor je inschrijving! Je ontvangt een bevestiging per e-mail met de sessiedetails en een herinneringsmail voor elke sessie."
+          "Bedankt voor je inschrijving! Je ontvangt nog een bevestiging per e-mail met de sessiedetails."
         );
         closeRegistrationModal();
         this.reset();
@@ -628,7 +628,7 @@ document
 
       if (response.ok) {
         alert(
-          "Bedankt voor je inschrijving! Je staat nu op de wachtlijst voor individuele begeleiding. Je ontvangt binnenkort een bevestigingsmail."
+          "Bedankt voor je inschrijving! Je staat nu op de wachtlijst voor individuele begeleiding."
         );
         closeIndividueleModal();
         this.reset();
