@@ -504,35 +504,42 @@ document
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
-    const moduleId = formData.get("moduleId");
-
-    // Haal reCAPTCHA token op
-    const recaptchaToken = await grecaptcha.execute(
-      "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
-      {
-        action: "inschrijving",
-      }
-    );
-
-    const registrationData = {
-      recaptchaToken: recaptchaToken,
-      moduleId: moduleId,
-      voornaam: formData.get("voornaam"),
-      achternaam: formData.get("achternaam"),
-      rijksregisternummer: formData.get("rijksregisternummer"),
-      email: formData.get("email"),
-      telefoon: formData.get("telefoon"),
-      verwijzerType: formData.get("verwijzerType"),
-      verwijzerNaam: formData.get("verwijzerNaam"),
-      bijzondereBehoeften: formData.get("bijzondereBehoeften"),
-    };
-
-    console.log("Frontend verzendt data:", registrationData); //log errors
-
-    let endpoint = `${API_BASE_URL}/inschrijvingen`;
+    // Disable submit button
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Bezig met inschrijven...";
+    submitBtn.style.opacity = "0.6";
 
     try {
+      // Haal reCAPTCHA token op
+      const recaptchaToken = await grecaptcha.execute(
+        "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+        {
+          action: "inschrijving",
+        }
+      );
+
+      const formData = new FormData(this);
+      const moduleId = formData.get("moduleId");
+
+      const registrationData = {
+        recaptchaToken: recaptchaToken,
+        moduleId: moduleId,
+        voornaam: formData.get("voornaam"),
+        achternaam: formData.get("achternaam"),
+        rijksregisternummer: formData.get("rijksregisternummer"),
+        email: formData.get("email"),
+        telefoon: formData.get("telefoon"),
+        verwijzerType: formData.get("verwijzerType"),
+        verwijzerNaam: formData.get("verwijzerNaam"),
+        bijzondereBehoeften: formData.get("bijzondereBehoeften"),
+      };
+
+      console.log("Frontend verzendt data:", registrationData); //log errors
+
+      let endpoint = `${API_BASE_URL}/inschrijvingen`;
+
       const response = await fetch(endpoint, {
         method: "POST",
         headers: {
@@ -561,6 +568,11 @@ document
       alert(
         "Er ging iets mis bij de inschrijving. Controleer je internetverbinding en probeer opnieuw."
       );
+    } finally {
+      // Re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.style.opacity = "1";
     }
   });
 
@@ -570,33 +582,40 @@ document
   .addEventListener("submit", async function (e) {
     e.preventDefault();
 
-    const formData = new FormData(this);
-    const voorkeurDagen = formData.getAll("voorkeurDagen");
-    const weekVoorkeur = formData.getAll("weekVoorkeur");
-
-    // Haal reCAPTCHA token op
-    const recaptchaToken = await grecaptcha.execute(
-      "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
-      {
-        action: "inschrijving",
-      }
-    );
-
-    const registrationData = {
-      recaptchaToken: recaptchaToken,
-      voornaam: formData.get("voornaam"),
-      achternaam: formData.get("achternaam"),
-      rijksregisternummer: formData.get("rijksregisternummer"),
-      email: formData.get("email"),
-      telefoon: formData.get("telefoon"),
-      verwijzerType: formData.get("verwijzerType"),
-      verwijzerNaam: formData.get("verwijzerNaam"),
-      bijzondereBehoeften: formData.get("bijzondereBehoeften"),
-      voorkeurDagen: voorkeurDagen,
-      weekVoorkeur: weekVoorkeur,
-    };
+    // Disable submit button
+    const submitBtn = this.querySelector('button[type="submit"]');
+    const originalText = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = "Bezig met inschrijven...";
+    submitBtn.style.opacity = "0.6";
 
     try {
+      // Haal reCAPTCHA token op
+      const recaptchaToken = await grecaptcha.execute(
+        "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+        {
+          action: "inschrijving",
+        }
+      );
+
+      const formData = new FormData(this);
+      const voorkeurDagen = formData.getAll("voorkeurDagen");
+      const weekVoorkeur = formData.getAll("weekVoorkeur");
+
+      const registrationData = {
+        recaptchaToken: recaptchaToken,
+        voornaam: formData.get("voornaam"),
+        achternaam: formData.get("achternaam"),
+        rijksregisternummer: formData.get("rijksregisternummer"),
+        email: formData.get("email"),
+        telefoon: formData.get("telefoon"),
+        verwijzerType: formData.get("verwijzerType"),
+        verwijzerNaam: formData.get("verwijzerNaam"),
+        bijzondereBehoeften: formData.get("bijzondereBehoeften"),
+        voorkeurDagen: voorkeurDagen,
+        weekVoorkeur: weekVoorkeur,
+      };
+
       const response = await fetch(`${API_BASE_URL}/individuele-inschrijving`, {
         method: "POST",
         headers: {
@@ -624,6 +643,11 @@ document
       alert(
         "Er ging iets mis bij de inschrijving. Controleer je internetverbinding en probeer opnieuw."
       );
+    } finally {
+      // ✅ Re-enable button
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalText;
+      submitBtn.style.opacity = "1";
     }
   });
 
