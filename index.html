@@ -575,7 +575,7 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
         
         <!-- Prijs -->
         <div>
-            <div class="text-4xl text-blue-DEFAULT mb-2">💶</div>
+            <div class="text-4xl text-blue-DEFAULT mb-2">€</div>
             <h3 class="font-bold text-xl text-black">Prijs</h3>
             <p class="text-sm text-indigo-dark">
                 2,50 euro per sessie<br />
@@ -636,9 +636,23 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
             </div>
 
             <div>
-                <label for="ind_rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">Rijksregisternummer *</label>
-                <input type="text" name="rijksregisternummer" id="ind_rijksregisternummer" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
+                <label for="ind_rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">
+                 Rijksregisternummer *
+                 <span class="text-xs font-light text-gray-dark">(geen punten of streepjes)</span>
+                </label>
+                <input 
+                type="text" 
+                name="rijksregisternummer" 
+                 id="ind_rijksregisternummer" 
+                 required 
+                 pattern="[0-9]{11}"
+                 maxlength="11"
+                 inputmode="numeric"
+                 title="Voer exact de 11 cijfers in, zonder punten of streepjes"
+                 class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"
+                >
             </div>
+
 
             <div>
                 <label for="ind_email" class="block text-indigo-dark text-base font-semibold mb-2">E-mail *</label>
@@ -866,9 +880,24 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
                     <input type="text" name="achternaam" id="achternaam" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 
                 </div>
                 <div>
-                    <label for="rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">Rijksregisternummer *</label>
-                    <input type="text" name="rijksregisternummer" id="rijksregisternummer" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light">
-                </div>
+                <div>
+                    <label for="rijksregisternummer" class="block text-indigo-dark text-base font-semibold mb-2">
+                    Rijksregisternummer *
+                     <span class="text-xs font-light text-gray-dark">(geen punten of streepjes)</span>
+                    </label>
+                    <input 
+                    type="text" 
+                    name="rijksregisternummer" 
+                    id="rijksregisternummer" 
+                    required 
+                    pattern="[0-9]{11}"
+                    maxlength="11"
+                    inputmode="numeric"
+                    title="Voer exact de 11 cijfers in, zonder punten of streepjes"
+                     class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"
+                    >
+                    </div>
+
                      <div>
                     <label for="e-mail" class="block text-indigo-dark text-base font-semibold mb-2">E-mail *</label> 
                     <input type="email" name="email" id="e-mail" required class="w-full px-3 py-1 border border-gray-DEFAULT rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-DEFAULT text-base font-light"> 

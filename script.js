@@ -509,7 +509,7 @@ document
 
     // Haal reCAPTCHA token op
     const recaptchaToken = await grecaptcha.execute(
-      "6Lf1cQCsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+      "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
       {
         action: "inschrijving",
       }
@@ -576,7 +576,7 @@ document
 
     // Haal reCAPTCHA token op
     const recaptchaToken = await grecaptcha.execute(
-      "6Lf1cQCsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
+      "6Lf1cQcsAAAAANMAuk7KaPWe0Rc-ZkcS_N4I-ADe",
       {
         action: "inschrijving",
       }
