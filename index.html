@@ -705,6 +705,25 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
     </div>
 </div>
 
+<!-- Locatie voorkeur -->
+<div>
+    <label class="block text-indigo-dark text-base font-semibold mb-2">Voorkeurslocatie (meerdere mogelijk) *</label>
+    <div class="space-y-2 ml-4">
+        <label class="flex items-center">
+            <input type="checkbox" name="voorkeurLocatie" value="Diest" class="mr-3">
+            <span class="font-light text-base">Diest</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" name="voorkeurLocatie" value="Paal" class="mr-3">
+            <span class="font-light text-base">Paal</span>
+        </label>
+        <label class="flex items-center">
+            <input type="checkbox" name="voorkeurLocatie" value="Beringen" class="mr-3">
+            <span class="font-light text-base">Beringen</span>
+        </label>
+    </div>
+</div>
+
             <div>
                 <label class="block text-indigo-dark text-base font-semibold mb-3">Voorkeursmomenten *</label>
                 <div class="space-y-2">
@@ -773,24 +792,37 @@ z-10"></div> <!-- Van wit naar zacht paars, meer opaciteit -->
                 Your browser does not support the video tag.
             </video>
             <div class="absolute inset-0 bg-sand-dark opacity-50 z-10"></div> <!-- Overlay met custom kleur -->
-            <div class="z-20 p-4 container mx-auto max-w-3xl"> <!-- z-index verhoogd -->
-                <p>
-                        <i class="fas fa-phone-alt text-indigo-dark mr-1"></i>
-                        <a
-                            href="tel:+32468116666"
-                            class="text-lg text-indigo-dark font-light hover:underline mb-3"
-                            >0468 11 66 66</a
-                        >
-                    </p>
-                <p class="text-xl text-indigo-dark font-light mt-1 mb-2">Schoenmakersstraat 8B3, derde verdieping, Diest</p>
-                
-                <h3 class="text-3xl md:text-4xl font-black mt-8 mb-6 text-indigo-dark">Vragen of meer informatie?</h3>
-                <p class="text-xl text-indigo-dark mb-8 font-light">
-                    Ik help je graag verder!
-                </p>
-                                <a href="mailto:info@brainctr.be?subject=Via de ELP-website: vraag" class="inline-flex items-center justify-center bg-blue-DEFAULT text-indigo-dark w-28 h-28 rounded-full text-lg md:text-xl font-semibold hover:bg-sand-dark/50 hover:text-white duration-300 ease-in-out shadow-lg transform hover:scale-105">
-                    Mail
-                </a>
+            <div class="z-20 p-4 container mx-auto max-w-3xl">
+    <!-- Foto van Hannelore -->
+    <div class="flex justify-center mb-6">
+        <img src="hannelore.png" alt="Hannelore" class="w-32 h-32 rounded-full border-4 border-white shadow-lg object-cover">
+    </div>
+
+    <p>
+        <i class="fas fa-phone-alt text-indigo-dark mr-1"></i>
+        <a href="tel:+32468116666" class="text-lg text-indigo-dark font-light hover:underline">0468 11 66 66</a>
+    </p>
+    <p class="text-xl text-indigo-dark font-light mt-1 mb-8">Schoenmakersstraat 8B3, derde verdieping, Diest</p>
+
+    <!-- Extra locaties -->
+    <div class="text-indigo-dark font-light space-y-3 mb-10">
+        <p class="text-lg font-black uppercase tracking-wide">Ook consult te:</p>
+        <p class="text-lg">
+            Paal, <a href="https://www.dedriehoekpaal.be" target="_blank" class="underline decoration-indigo-dark/30 hover:text-white transition-colors">artsenpraktijk De Driehoek</a>, Heldenlaan 20 bus 1
+        </p>
+        <p class="text-lg">
+            Beringen, <a href="https://www.beringentalentenstad.be" target="_blank" class="underline decoration-indigo-dark/30 hover:text-white transition-colors">Beringen Talentenstad</a>, Stadswal 14, F17
+        </p>
+    </div>
+    
+    <h3 class="text-3xl md:text-4xl font-black mt-8 mb-6 text-indigo-dark">Vragen of meer informatie?</h3>
+    <p class="text-xl text-indigo-dark mb-8 font-light">
+        Ik help je graag verder!
+    </p>
+    <a href="mailto:info@brainctr.be?subject=Via de ELP-website: vraag" class="inline-flex items-center justify-center bg-blue-DEFAULT text-indigo-dark w-28 h-28 rounded-full text-lg md:text-xl font-semibold hover:bg-sand-dark/50 hover:text-white duration-300 ease-in-out shadow-lg transform hover:scale-105">
+        Mail
+    </a>
+
 
                 <!-- Footer Branding -->
                 <div class="mt-24 text-indigo-dark text-sm">
