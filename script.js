@@ -140,17 +140,47 @@ async function showModule(moduleId) {
     modalTitle.classList.add("text-indigo-brand");
 
     let sessionDatesListHtml = "";
-    let sessionTimeText = "Vrijdag 10:00 of 11:30"; // Default
+    let sessionTimeText = ""; // Default
+    let sessionLocationText = ""; // Default
     let upcomingSessions = [];
 
     if (availableSessions && availableSessions.length > 0) {
+      // Weekdag afleiden uit datum (NULL-datums overslaan)
+      const uniqueDagen = [
+        ...new Set(
+          availableSessions
+            .filter((s) => s.datum)
+            .map((s) =>
+              new Date(s.datum + "T12:00:00").toLocaleDateString("nl-BE", {
+                weekday: "long",
+              })
+            )
+        ),
+      ];
+      // Eerste letter hoofdletter
+      const dagenTekst = uniqueDagen
+        .map((d) => d.charAt(0).toUpperCase() + d.slice(1))
+        .join(" of ");
+
       const uniqueTimes = [
         ...new Set(
           availableSessions.map((s) => s.formatted_time).filter((t) => t)
         ),
       ];
-      if (uniqueTimes.length > 0) {
-        sessionTimeText = `Vrijdag ${uniqueTimes.join(" of ")}`;
+
+      if (dagenTekst && uniqueTimes.length > 0) {
+        sessionTimeText = `${dagenTekst} ${uniqueTimes.join(" of ")}`;
+      } else if (uniqueTimes.length > 0) {
+        sessionTimeText = uniqueTimes.join(" of ");
+      }
+
+      const uniqueLocaties = [
+        ...new Set(
+          availableSessions.map((s) => s.locatie).filter((l) => l)
+        ),
+      ];
+      if (uniqueLocaties.length > 0) {
+        sessionLocationText = uniqueLocaties.join(" of ");
       }
 
       const sessionsWithSpots = availableSessions.filter(
@@ -229,7 +259,7 @@ async function showModule(moduleId) {
                   module.min_deelnemers
                 }-${module.max_deelnemers}</span></div>
                 <div class="font-bold text-lg">Tijd: <span class="text-base font-light"> <!-- text-base FIX -->${sessionTimeText}</span></div>
-                <div class="font-bold text-lg">Locatie: <span class="text-base font-light"> <!-- text-base FIX -->Hasseltsestraat 30, Diest</span></div>
+                <div class="font-bold text-lg">Locatie: <span class="text-base font-light">${sessionLocationText}</span></div>
                 ${
                   module.formatted_start_date
                     ? `<div class="font-bold text-lg">Volgende start: <span class="text-base font-light"> <!-- text-base FIX -->${module.formatted_start_date}</span></div>`
