@@ -220,9 +220,9 @@ async function showModule(moduleId) {
                             return `
                                 <li>
                                     ${
-                                      session.formatted_date || "Datum TBD"
+                                      session.formatted_date || ""
                                     } om ${
-                              session.formatted_time || "Tijd TBD"
+                              session.formatted_time || ""
                             } 
                                     (${
                                       session.locatie
@@ -242,7 +242,7 @@ async function showModule(moduleId) {
                 ${
                   upcomingSessions.length > 0
                     ? "Als de huidige sessies vol zijn of al gestart, word je automatisch geplaatst voor de volgende reeks."
-                    : "Je ontvangt een bevestigingsmail zodra de sessiedata zijn ingepland."
+                    : "Je ontvangt een mail met verdere sessiedetails zodra de sessiedata zijn ingepland."
                 }
             </p>
         `;
@@ -582,7 +582,7 @@ document
 
       if (response.ok) {
         alert(
-          "Bedankt voor je inschrijving! Je ontvangt nog een bevestiging per e-mail met de sessiedetails."
+          "Bedankt voor je inschrijving! Je ontvangt nog een bevestiging per e-mail met verdere sessiedetails."
         );
         closeRegistrationModal();
         this.reset();
