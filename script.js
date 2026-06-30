@@ -151,7 +151,7 @@ async function showModule(moduleId) {
     modalTitle.textContent = module.naam;
     modalTitle.classList.add("text-indigo-brand");
 
-    // Bouw de reeksen-lijst 
+    // Bouw de reeksen-lijst (startdatum, tijd en locatie)
     let reeksenHtml = "";
     if (reeksen.length > 0) {
       reeksenHtml = `
@@ -167,7 +167,8 @@ async function showModule(moduleId) {
               return `
                 <div class="flex items-center justify-between gap-4 rounded-lg px-5 py-4" style="background-color: #fefce8;">
                   <div>
-                    <p class="text-base font-bold ${datumKleur} leading-tight">
+                    <p class="text-base font-light text-indigo-dark/80 leading-tight">Startdatum:</p>
+                    <p class="text-sm font-bold ${datumKleur} leading-tight mt-1">
                       ${r.start_datum}${tijdTekst}
                     </p>
                     ${
