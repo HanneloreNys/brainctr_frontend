@@ -162,16 +162,17 @@ async function showModule(moduleId) {
               const open = r.inschrijven_mogelijk;
               const tijdTekst = r.start_tijd ? ` om ${r.start_tijd}` : "";
               const labelTekst = open ? "vrije plaatsen" : "al gestart";
-              const labelKleur = open ? "text-indigo-dark/50" : "text-gray-400";
+              const datumKleur = open ? "text-indigo-brand" : "text-gray-400";
+              const labelKleur = open ? "text-indigo-dark/60" : "text-gray-400";
               return `
-                <div class="flex items-center justify-between gap-4 bg-sand-light/40 rounded-lg px-5 py-4">
+                <div class="flex items-center justify-between gap-4 rounded-lg px-5 py-4" style="background-color: #fefce8;">
                   <div>
-                    <p class="text-lg font-semibold text-gray-600 leading-tight">
+                    <p class="text-base font-bold ${datumKleur} leading-tight">
                       ${r.start_datum}${tijdTekst}
                     </p>
                     ${
                       r.locatie
-                        ? `<p class="text-sm font-light text-gray-400 mt-1">${r.locatie}</p>`
+                        ? `<p class="text-sm font-light text-indigo-dark/70 mt-1">${r.locatie}</p>`
                         : ""
                     }
                   </div>
