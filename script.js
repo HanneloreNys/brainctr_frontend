@@ -125,11 +125,23 @@ async function showModule(moduleId) {
     }
     const data = await response.json();
     const module = data.module;
-    const availableSessions = data.availableSessions;
 
     if (!module) {
       alert("Module details konden niet worden geladen.");
       return;
+    }
+
+    // Haal de zichtbare reeksen op (vervangt de oude losse-sessie-weergave)
+    let reeksen = [];
+    try {
+      const reeksenResp = await fetch(
+        `${API_BASE_URL}/modules/${moduleId}/reeksen-publiek`
+      );
+      if (reeksenResp.ok) {
+        reeksen = await reeksenResp.json();
+      }
+    } catch (e) {
+      console.error("Fout bij ophalen reeksen:", e);
     }
 
     const modalTitle = document.getElementById("modalTitle");
@@ -139,147 +151,78 @@ async function showModule(moduleId) {
     modalTitle.textContent = module.naam;
     modalTitle.classList.add("text-indigo-brand");
 
-    let sessionDatesListHtml = "";
-    let sessionTimeText = ""; // Default
-    let sessionLocationText = ""; // Default
-    let upcomingSessions = [];
-
-    if (availableSessions && availableSessions.length > 0) {
-      // Weekdag afleiden uit datum (NULL-datums overslaan)
-      const uniqueDagen = [
-        ...new Set(
-          availableSessions
-            .filter((s) => s.datum)
-            .map((s) =>
-              new Date(s.datum + "T12:00:00").toLocaleDateString("nl-BE", {
-                weekday: "long",
-              })
-            )
-        ),
-      ];
-      // Eerste letter hoofdletter
-      const dagenTekst = uniqueDagen
-        .map((d) => d.charAt(0).toUpperCase() + d.slice(1))
-        .join(" of ");
-
-      const uniqueTimes = [
-        ...new Set(
-          availableSessions.map((s) => s.formatted_time).filter((t) => t)
-        ),
-      ];
-
-      if (dagenTekst && uniqueTimes.length > 0) {
-        sessionTimeText = `${dagenTekst} ${uniqueTimes.join(" of ")}`;
-      } else if (uniqueTimes.length > 0) {
-        sessionTimeText = uniqueTimes.join(" of ");
-      }
-
-      const uniqueLocaties = [
-        ...new Set(
-          availableSessions.map((s) => s.locatie).filter((l) => l)
-        ),
-      ];
-      if (uniqueLocaties.length > 0) {
-        sessionLocationText = uniqueLocaties.join(" of ");
-      }
-
-      const sessionsWithSpots = availableSessions.filter(
-        (s) => s.max_deelnemers - s.huidige_deelnemers > 0
-      );
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
-
-      upcomingSessions = sessionsWithSpots.filter((s) => {
-        if (!s.datum) return true;
-        const sessionDate = new Date(s.datum);
-        return sessionDate >= today;
-      });
-
-      if (upcomingSessions.length > 0) {
-        sessionDatesListHtml = `
-                    <h4 class="font-bold text-xl pt-6 mb-2 text-indigo-dark">Komende Sessies:</h4>
-                    <ul class="list-disc list-inside space-y-2 text-base font-light text-indigo-dark"> <!-- text-base FIX -->
-                        ${upcomingSessions
-                          .map((session) => {
-                            const remainingSpots =
-                              session.max_deelnemers -
-                              session.huidige_deelnemers;
-                            let spotsText = "",
-                              spotsClass = "";
-
-                            if (remainingSpots > 0 && remainingSpots <= 3) {
-                              spotsText = ` - Nog ${remainingSpots} plaats${
-                                remainingSpots === 1 ? "" : "en"
-                              }`;
-                              spotsClass = "text-red-dark font-bold";
-                            } else if (remainingSpots <= 0) {
-                              spotsText = ` - Volgeboekt`;
-                              spotsClass = "text-red-dark font-bold";
-                            }
-
-                            return `
-                                <li>
-                                    ${
-                                      session.formatted_date || ""
-                                    } om ${
-                              session.formatted_time || ""
-                            } 
-                                    (${
-                                      session.locatie
-                                    }) <span class="${spotsClass}">${spotsText}</span>
-                                </li>
-                            `;
-                          })
-                          .join("")}
-                    </ul>
-                `;
-      }
+    // Bouw de reeksen-lijst (variant B: indigo accentbalk + tekstlabel)
+    let reeksenHtml = "";
+    if (reeksen.length > 0) {
+      reeksenHtml = `
+        <h4 class="font-bold text-xl pt-8 mb-4 text-indigo-dark">Geplande reeksen:</h4>
+        <div class="space-y-3">
+          ${reeksen
+            .map((r) => {
+              const open = r.inschrijven_mogelijk;
+              const tijdTekst = r.start_tijd ? ` om ${r.start_tijd}` : "";
+              const accent = open ? "border-indigo-brand" : "border-gray-300";
+              const datumKleur = open ? "text-indigo-dark" : "text-gray-500";
+              const locatieKleur = open ? "text-indigo-brand" : "text-gray-400";
+              const labelKleur = open ? "text-indigo-brand" : "text-gray-400";
+              const labelTekst = open ? "vrije plaatsen" : "al gestart";
+              return `
+                <div class="flex items-center justify-between gap-4 bg-white border border-gray-200 ${accent} border-l-4 rounded-lg px-5 py-4">
+                  <div>
+                    <p class="text-lg font-bold ${datumKleur} leading-tight">
+                      ${r.start_datum}${tijdTekst}
+                    </p>
+                    ${
+                      r.locatie
+                        ? `<p class="text-sm font-light ${locatieKleur} mt-1">${r.locatie}</p>`
+                        : ""
+                    }
+                  </div>
+                  <span class="shrink-0 text-sm font-semibold ${labelKleur}">${labelTekst}</span>
+                </div>
+              `;
+            })
+            .join("")}
+        </div>
+      `;
     }
 
-    sessionDatesListHtml += `
-            <p class="text-base font-light text-indigo-dark bg-blue-light p-4 rounded-lg" style="margin-top: 3rem;">
-                💡&nbsp;&nbsp;Je kunt je altijd inschrijven voor deze module. 
-                ${
-                  upcomingSessions.length > 0
-                    ? "Als de huidige sessies vol zijn of al gestart, word je automatisch geplaatst voor de volgende reeks."
-                    : "Je ontvangt een mail met verdere sessiedetails zodra de sessiedata zijn ingepland."
-                }
-            </p>
-        `;
+    // Blauw informatiekader (altijd tonen)
+    const infoKader = `
+      <p class="text-base font-light text-indigo-dark bg-blue-light p-4 rounded-lg" style="margin-top: 3rem;">
+        💡&nbsp;&nbsp;Je kan je altijd inschrijven voor deze module. Je ontvangt een mail
+        wanneer een nieuwe reeks met data bekend is, waarop je dan kan bevestigen of
+        je deelneemt.
+      </p>
+    `;
 
     modalContent.innerHTML = `
-            <p class="text-xl font-light text-indigo-dark mb-8">${
-              module.korte_beschrijving || module.beschrijving
-            }</p>
-            <div class="bg-sand-light p-4 rounded-lg mt-4 mb-8 grid grid-cols-2 gap-4 text-base text-black"> 
-                <div class="font-bold text-lg">Aantal sessies: <span class="text-base font-light"> <!-- text-base FIX -->${
-                  module.aantal_sessies
-                }</span></div>
-                <div class="font-bold text-lg">Deelnemers: <span class="text-base font-light"> <!-- text-base FIX -->${
-                  module.min_deelnemers
-                }-${module.max_deelnemers}</span></div>
-                <div class="font-bold text-lg">Tijd: <span class="text-base font-light"> <!-- text-base FIX -->${sessionTimeText}</span></div>
-                <div class="font-bold text-lg">Locatie: <span class="text-base font-light">${sessionLocationText}</span></div>
-                ${
-                  module.formatted_start_date
-                    ? `<div class="font-bold text-lg">Volgende start: <span class="text-base font-light"> <!-- text-base FIX -->${module.formatted_start_date}</span></div>`
-                    : ""
-                } 
-            </div>
-            <h4 class="font-bold text-2xl pt-6 mb-2 text-indigo-dark">Programma en Inzichten:</h4> 
-            <p class="text-lg font-light">${module.beschrijving}</p> 
-            ${
-              module.vereisten
-                ? `<h4 class="font-semibold text-xl mt-4 mb-2 text-indigo-dark">Vereisten:</h4><p class="text-red-dark text-lg font-light">${module.vereisten}</p>`
-                : ""
-            } 
-            ${
-              module.doelgroep
-                ? `<h4 class="font-semibold text-xl mt-4 mb-2 text-indigo-dark">Doelgroep:</h4><p class="text-lg font-light">${module.doelgroep}</p>`
-                : ""
-            } 
-            ${sessionDatesListHtml}
-        `;
+      <p class="text-xl font-light text-indigo-dark mb-8">${
+        module.korte_beschrijving || module.beschrijving
+      }</p>
+      <div class="bg-sand-light p-4 rounded-lg mt-4 mb-8 grid grid-cols-2 gap-4 text-base text-black"> 
+        <div class="font-bold text-lg">Aantal sessies: <span class="text-base font-light">${
+          module.aantal_sessies
+        }</span></div>
+        <div class="font-bold text-lg">Deelnemers: <span class="text-base font-light">${
+          module.min_deelnemers
+        }-${module.max_deelnemers}</span></div>
+      </div>
+      <h4 class="font-bold text-2xl pt-6 mb-2 text-indigo-dark">Programma en Inzichten:</h4> 
+      <p class="text-lg font-light">${module.beschrijving}</p> 
+      ${
+        module.vereisten
+          ? `<h4 class="font-semibold text-xl mt-4 mb-2 text-indigo-dark">Vereisten:</h4><p class="text-red-dark text-lg font-light">${module.vereisten}</p>`
+          : ""
+      } 
+      ${
+        module.doelgroep
+          ? `<h4 class="font-semibold text-xl mt-4 mb-2 text-indigo-dark">Doelgroep:</h4><p class="text-lg font-light">${module.doelgroep}</p>`
+          : ""
+      } 
+      ${reeksenHtml}
+      ${infoKader}
+    `;
 
     registerBtn.onclick = () => showRegistrationForm(moduleId, module.naam);
 
@@ -294,9 +237,9 @@ async function showModule(moduleId) {
         .classList.add("opacity-100", "scale-100");
     }, 10);
   } catch (error) {
-    console.error("Fout bij het ophalen van module details of sessies:", error);
+    console.error("Fout bij het ophalen van module details of reeksen:", error);
     alert(
-      "Er ging iets mis bij het laden van module details of sessies. Probeer het later opnieuw."
+      "Er ging iets mis bij het laden van de module. Probeer het later opnieuw."
     );
   }
 }
