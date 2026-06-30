@@ -151,34 +151,31 @@ async function showModule(moduleId) {
     modalTitle.textContent = module.naam;
     modalTitle.classList.add("text-indigo-brand");
 
-    // Bouw de reeksen-lijst (variant B: indigo accentbalk + tekstlabel)
+    // Bouw de reeksen-lijst 
     let reeksenHtml = "";
     if (reeksen.length > 0) {
       reeksenHtml = `
         <h4 class="font-bold text-xl pt-8 mb-4 text-indigo-dark">Geplande reeksen:</h4>
-        <div class="space-y-3">
+        <div class="space-y-2">
           ${reeksen
             .map((r) => {
               const open = r.inschrijven_mogelijk;
               const tijdTekst = r.start_tijd ? ` om ${r.start_tijd}` : "";
-              const accent = open ? "border-indigo-brand" : "border-gray-300";
-              const datumKleur = open ? "text-indigo-dark" : "text-gray-500";
-              const locatieKleur = open ? "text-indigo-brand" : "text-gray-400";
-              const labelKleur = open ? "text-indigo-brand" : "text-gray-400";
               const labelTekst = open ? "vrije plaatsen" : "al gestart";
+              const labelKleur = open ? "text-indigo-dark/50" : "text-gray-400";
               return `
-                <div class="flex items-center justify-between gap-4 bg-white border border-gray-200 ${accent} border-l-4 rounded-lg px-5 py-4">
+                <div class="flex items-center justify-between gap-4 bg-sand-light/40 rounded-lg px-5 py-4">
                   <div>
-                    <p class="text-lg font-bold ${datumKleur} leading-tight">
+                    <p class="text-lg font-semibold text-gray-600 leading-tight">
                       ${r.start_datum}${tijdTekst}
                     </p>
                     ${
                       r.locatie
-                        ? `<p class="text-sm font-light ${locatieKleur} mt-1">${r.locatie}</p>`
+                        ? `<p class="text-sm font-light text-gray-400 mt-1">${r.locatie}</p>`
                         : ""
                     }
                   </div>
-                  <span class="shrink-0 text-sm font-semibold ${labelKleur}">${labelTekst}</span>
+                  <span class="shrink-0 text-sm font-light ${labelKleur}">${labelTekst}</span>
                 </div>
               `;
             })
