@@ -9,7 +9,7 @@ let currentModuleId = null;
 // Functie om modules te laden van de backend
 async function loadModules() {
   try {
-    const response = await fetch(`${API_BASE_URL}/modules`);
+    const response = await fetch(`${API_BASE_URL}/api/modules`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -119,7 +119,7 @@ async function showModule(moduleId) {
   currentModuleId = moduleId;
 
   try {
-    const response = await fetch(`${API_BASE_URL}/modules/${moduleId}`);
+    const response = await fetch(`${API_BASE_URL}/api/modules/${moduleId}`);
     if (!response.ok) {
       throw new Error(`HTTP error! status: ${response.status}`);
     }
@@ -135,7 +135,7 @@ async function showModule(moduleId) {
     let reeksen = [];
     try {
       const reeksenResp = await fetch(
-        `${API_BASE_URL}/modules/${moduleId}/reeksen-publiek`
+        `${API_BASE_URL}/api/modules/${moduleId}/reeksen-publiek`
       );
       if (reeksenResp.ok) {
         reeksen = await reeksenResp.json();
@@ -510,7 +510,7 @@ document
 
       console.log("Frontend verzendt data:", registrationData); //log errors
 
-      let endpoint = `${API_BASE_URL}/inschrijvingen`;
+      let endpoint = `${API_BASE_URL}/api/inschrijvingen`;
 
       const response = await fetch(endpoint, {
         method: "POST",
@@ -588,7 +588,7 @@ document
         weekVoorkeur: weekVoorkeur,
       };
 
-      const response = await fetch(`${API_BASE_URL}/individuele-inschrijving`, {
+      const response = await fetch(`${API_BASE_URL}/api/individuele-inschrijving`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
