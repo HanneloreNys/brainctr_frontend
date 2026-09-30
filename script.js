@@ -524,8 +524,10 @@ document
 
       if (response.ok) {
         alert(
-          "Bedankt voor je inschrijving! Je ontvangt nog een bevestiging per e-mail met verdere sessiedetails."
-        );
+  response.status === 200 && result.message
+    ? result.message
+    : "Bedankt voor je inschrijving! Je ontvangt nog een bevestiging per e-mail met verdere sessiedetails."
+);
         closeRegistrationModal();
         this.reset();
         loadModules();
