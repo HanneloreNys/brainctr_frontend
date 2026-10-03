@@ -76,7 +76,7 @@
   </div>
 
   <script>
-    const API = "https://brainctrjsnodebackend-production.up.railway.app";
+    const API = "https://api.robin-juno.be";
     const MAIL = `<a href="mailto:info@brainctr.be?subject=Individuele begeleiding">info@brainctr.be</a>`;
 
     function getToken() {
@@ -107,10 +107,10 @@
 
         if (res.ok && data.success) {
           document.getElementById("titel").textContent = "Fijn!";
-          setBoodschap(`Je staat nu op de wachtlijst voor individuele begeleiding${voornaam}. We nemen contact op zodra er een plek beschikbaar is.`);
+          setBoodschap(`Je staat nu op de wachtlijst voor individuele begeleiding ${voornaam}. We nemen contact op zodra er een plek beschikbaar is.`);
         } else if (res.status === 410) {
           document.getElementById("titel").textContent = "Termijn verlopen";
-          setBoodschap(`De termijn om te reageren is verstreken${voornaam}. Wil je toch nog individuele begeleiding? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
+          setBoodschap(`De termijn om te reageren is verstreken ${voornaam}. Wil je toch nog individuele begeleiding? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
         } else {
           document.getElementById("titel").textContent = "Ongeldige link";
           setBoodschap(`Deze link is niet geldig. Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);

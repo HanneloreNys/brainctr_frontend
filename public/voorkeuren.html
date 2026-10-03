@@ -176,7 +176,7 @@
   </div>
 
   <script>
-    const API = "https://brainctrjsnodebackend-production.up.railway.app";
+    const API = "https://api.robin-juno.be";
 
     const DAGEN = [["ma","Ma"],["di","Di"],["wo","Wo"],["do","Do"],["vr","Vr"],["za","Za"]];
     const DAGDELEN = [["ochtend","Ochtend"],["middag","Middag"],["namiddag","Namiddag"],["avond","Avond"]];
@@ -310,7 +310,7 @@
 
         if (!res.ok) {
           if (res.status === 410) {
-            toonFout("Termijn verlopen", `De termijn om te reageren is verstreken${data.voornaam ? ", " + data.voornaam : ""}. Mail gerust naar info@brainctr.be of bel 0468 11 66 66.`);
+            toonFout("Termijn verlopen", `De termijn om te reageren is verstreken ${data.voornaam ? ", " + data.voornaam : ""}. Mail gerust naar info@brainctr.be of bel 0468 11 66 66.`);
           } else {
             toonFout("Ongeldige link", "Deze link is niet geldig. Mail gerust naar info@brainctr.be of bel 0468 11 66 66.");
           }

@@ -125,7 +125,7 @@
   </div>
 
   <script>
-    const API = "https://brainctrjsnodebackend-production.up.railway.app";
+    const API = "https://api.robin-juno.be";
     const MAIL = `<a href="mailto:info@brainctr.be?subject=Uitnodiging modulesessies">info@brainctr.be</a>`;
 
     const MOMENTEN = [
@@ -206,10 +206,10 @@
           show("voorkeur-form");
         } else if (res.status === 409) {
           document.getElementById("titel").textContent = "Al gereageerd";
-          setBoodschap(`Je hebt al gereageerd op deze uitnodiging${voornaam}. Heb je een vraag? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
+          setBoodschap(`Je hebt al gereageerd op deze uitnodiging ${voornaam}. Heb je een vraag? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
         } else if (res.status === 410) {
           document.getElementById("titel").textContent = "Termijn verlopen";
-          setBoodschap(`De termijn voor deze uitnodiging is verstreken${voornaam}. Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
+          setBoodschap(`De termijn voor deze uitnodiging is verstreken ${voornaam}. Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
         } else {
           document.getElementById("titel").textContent = "Ongeldige link";
           setBoodschap(`Deze link is niet geldig. Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);

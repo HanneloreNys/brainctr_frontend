@@ -106,7 +106,7 @@
   </div>
 
   <script>
-    const API = "https://brainctrjsnodebackend-production.up.railway.app";
+    const API = "https://api.robin-juno.be";
     const MAIL = `<a href="mailto:info@brainctr.be?subject=Uitnodiging modulesessies">info@brainctr.be</a>`;
     let sessiesData = [];
     let moduleNaam = "";
@@ -204,7 +204,7 @@
 
         if (res.ok && data.success) {
           document.getElementById("titel").textContent = "Deelname bevestigd";
-          setBoodschap(`Fijn dat je erbij bent${voornaam}. We verwelkomen je graag voor ${moduleNaam}.`);
+          setBoodschap(`Fijn dat je erbij bent ${voornaam}. We verwelkomen je graag voor ${moduleNaam}.`);
           renderSessies(sessiesData);
         } else if (res.status === 409) {
           if (data.status === "bevestigd") {
@@ -213,11 +213,11 @@
             renderSessies(sessiesData);
           } else {
             document.getElementById("titel").textContent = "Al gereageerd";
-            setBoodschap(`Je hebt al gereageerd op deze uitnodiging${voornaam}. Heb je een vraag? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
+            setBoodschap(`Je hebt al gereageerd op deze uitnodiging ${voornaam}. Heb je een vraag? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
           }
         } else if (res.status === 410) {
           document.getElementById("titel").textContent = "Termijn verlopen";
-          setBoodschap(`De bevestigingstermijn voor ${moduleNaam} is verstreken${voornaam}. Wil je toch nog deelnemen? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
+          setBoodschap(`De bevestigingstermijn voor ${moduleNaam} is verstreken ${voornaam}. Wil je toch nog deelnemen? Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
         } else {
           document.getElementById("titel").textContent = "Ongeldige link";
           setBoodschap(`Deze link is niet geldig. Mail gerust naar ${MAIL} of bel 0468 11 66 66.`);
